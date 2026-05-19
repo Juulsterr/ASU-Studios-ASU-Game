@@ -2,26 +2,21 @@ using UnityEngine;
 
 public class ShootLazers : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private float lazerSpeed = 10f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
+    public Transform firePoint;
+    public GameObject lazer;
+    
     // Update is called once per frame
     void Update()
     {
-        
+       if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
     }
 
-    private void ShootLazer()
+    void Shoot()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            GameObject LightLazer = Instantiate(prefab, transform.position, Quaternion.identity);
-        }
+      Instantiate(lazer, firePoint.position, firePoint.rotation); 
     }
 
     

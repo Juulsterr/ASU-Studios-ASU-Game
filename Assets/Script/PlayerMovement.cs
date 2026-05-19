@@ -2,31 +2,62 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-   public int speed = 5;
+    private Rigidbody2D rb;
+   public float moveSpeed = 2.5f;
+   public float sprintSpeed = 5f;
+   private int distance;
+   public GameObject lazer;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
-        {
-            transform.position += new Vector3(0, 1, 0) * Time.deltaTime * speed;
-        }
-        if(Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, -1, 0) * Time.deltaTime * speed;
-        } 
+        bool up = Input.GetKey(KeyCode.W);
+        bool down = Input.GetKey(KeyCode.S);
+        bool left = Input.GetKey(KeyCode.A);
+        bool right = Input.GetKey(KeyCode.D);
 
-        if(Input.GetKey(KeyCode.A))
+        Vector3 move = Vector3.zero;
+
+        if (up && !down && !left && !right)
         {
-            transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
+            move = Vector3.up;
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (down && !up && !left && !right)
         {
-            transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
+            move = Vector3.down;
         }
-    }  
+        else if (left && !up && !down && !right)
+        {
+            move = Vector3.left;
+        }
+        else if (right && !up && !down && !left)
+        {
+            move = Vector3.right;
+        }
+
+        transform.position += move * Time.deltaTime * moveSpeed;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = sprintSpeed;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 2.5f;
+        }
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+
+        rb.AddForce (movement * moveSpeed);
+
+    }
+
 }
