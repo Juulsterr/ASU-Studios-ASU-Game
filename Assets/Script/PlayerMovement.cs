@@ -1,16 +1,51 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player Movement")]
     private Rigidbody2D rb;
-   public float moveSpeed = 2.5f;
-   public float sprintSpeed = 5f;
-   private int distance;
-   public GameObject lazer;
+    public float moveSpeed = 2.5f;
+    private float sprintSpeed = 5f;
+    private int distance;
+    public GameObject lazer;
+
+
+
+    [Header("Stamina")]
+    [HideInInspector] public bool hasRegenerated = true;
+    [Range(0, 50)] [SerializeField] private float staminaRegen = 20f;
+    public Image staminaImage;
+    public float speedStaminaCost = 25f;
+
+     [field: SerializeField]
+    public float MaxStamina { get; private set; }
+   
+    [field: SerializeField]
+
+    private float stamina = 0;
+    public float Stamina {
+        get
+        {
+            return stamina;
+
+        }
+        set
+        {
+            if(value < 0){stamina = 0;}
+            else
+            {
+                stamina = value;
+            }
+
+        } }
+ 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -41,14 +76,22 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position += move * Time.deltaTime * moveSpeed;
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Stamina -= speedStaminaCost * Time.deltaTime;
+
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             moveSpeed = sprintSpeed;
+            staminaRegen = 0f;
         }
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             moveSpeed = 2.5f;
+            staminaRegen = 20f;
         }
 
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -58,6 +101,17 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce (movement * moveSpeed);
 
-    }
+        if(stamina <= MaxStamina - 0.01)
+        {
+            stamina += staminaRegen * Time.deltaTime;
+        }
 
+        staminaImage.fillAmount = stamina / 100f;
+
+        if (stamina == 0)
+        {
+            moveSpeed = 2.5f;
+        }
+
+    } 
 }
