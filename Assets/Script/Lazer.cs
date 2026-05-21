@@ -3,13 +3,13 @@ using UnityEngine;
 public class Lazer : MonoBehaviour
 {
     public float speed = 20f;
-    private int distance;
+    public int damage = 34;
 
     public Rigidbody2D rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb.linearVelocity = transform.right * speed;
+       Destroy(gameObject, 1f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
@@ -17,6 +17,7 @@ public class Lazer : MonoBehaviour
         Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
+    
 
     void Update()
     {

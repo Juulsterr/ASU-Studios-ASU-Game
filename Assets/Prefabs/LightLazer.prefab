@@ -169,5 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb83323d9406447308a0631faad7c64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lazer
+  obj: {fileID: 5960785833786693271}
   speed: 20
   rb: {fileID: 8071814221079625473}

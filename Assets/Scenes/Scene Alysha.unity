@@ -867,8 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 2.5
-  sprintSpeed: 5
-  lazer: {fileID: 0}
+  lazer: {fileID: 5960785833786693271, guid: 7982afdb06ac549ed93dcd53ba412d71, type: 3}
   hasRegenerated: 1
   staminaRegen: 20
   staminaImage: {fileID: 1681798287}

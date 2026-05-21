@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         get
         {
             return stamina;
-
         }
         set
         {
@@ -37,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 stamina = value;
             }
-
         } }
  
 
@@ -98,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+
 
         rb.AddForce (movement * moveSpeed);
 
