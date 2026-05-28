@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "ASU-Studios-ASU-Game.slnx",
+    "dotnet.defaultSolution": "ASU-Game-BO.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
