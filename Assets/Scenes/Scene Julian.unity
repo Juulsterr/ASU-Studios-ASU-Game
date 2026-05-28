@@ -244,16 +244,13 @@ MonoBehaviour:
     Enabled: 0
     m_Value: 0
   OutputChannel: 1
-  ActivationId: 5
-  m_QueuePriority: 0
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
-  <Extensions>k__BackingField: []
-  <PreviousStateIsValid>k__BackingField: 1
-  <FollowTargetChanged>k__BackingField: 0
-  <LookAtTargetChanged>k__BackingField: 0
-  Target: {TrackingTarget: {fileID: 889804121}, LookAtTarget: {fileID: 0}, CustomLookAtTarget: 0}
+  Target:
+    TrackingTarget: {fileID: 889804121}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -273,12 +270,7 @@ MonoBehaviour:
       Curvature: {x: 2, y: 11}
       BarrelClipping: 0.25
       Anamorphism: 0
-    m_OrthoFromCamera: 1
-    m_PhysicalFromCamera: 0
-    m_AspectFromCamera: 2.0181818
-    m_SourceCamera: {fileID: 1813578388}
   BlendHint: 0
-  m_Pipeline: []
 --- !u!4 &322529663
 Transform:
   m_ObjectHideFlags: 0
@@ -306,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
-  m_VcamOwner: {fileID: 322529662}
   TrackerSettings:
     BindingMode: 4
     PositionDamping: {x: 1, y: 1, z: 1}
@@ -345,12 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
-  m_EventSystem: {fileID: 0}
-  m_InputOverride: {fileID: 0}
-  m_DefaultInput: {fileID: 0}
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
-  m_TrackedDeviceDragThresholdMultiplier: 2
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -431,7 +418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Topdown.Movement.PlayerMovement
   speed: 2
   target: {fileID: 889804122}
-  rb: {fileID: 0}
 --- !u!50 &565025766
 Rigidbody2D:
   serializedVersion: 5
@@ -524,7 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4067a5df95e2f941946bf6988c2b00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _bar: {fileID: 0}
 --- !u!1 &567230417
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +800,6 @@ MonoBehaviour:
   _TopHealthE1: {fileID: 1343997891}
   _BottomHealthE1: {fileID: 2092833427}
   _animationSpeed: 10
-  _fullWidth: 0
 --- !u!1 &889804120
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,9 +879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMMovement
   moveSpeed: 2.5
   sprintSpeed: 5
-  rb: {fileID: 0}
-  moveInput: {x: 0, y: 0}
-  movement: {x: 0, y: 0}
 --- !u!114 &889804124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,7 +950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8975c9751788449a3bc577899a79fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _barP: {fileID: 0}
 --- !u!1 &974678001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1425,7 @@ MonoBehaviour:
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
+    serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
@@ -1495,14 +1476,12 @@ MonoBehaviour:
     Style: 1
     Time: 2
     CustomCurve:
+      serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
-  m_OutputCamera: {fileID: 1813578388}
-  m_TargetOverride: {fileID: 0}
-  m_LastFrameUpdated: 3
 --- !u!1 &1820020584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1832,6 @@ MonoBehaviour:
   _TopHealthP: {fileID: 1914083902}
   _BottomHealthP: {fileID: 974678002}
   _animationSpeed: 10
-  _fullWidth: 0
 --- !u!1 &2092833426
 GameObject:
   m_ObjectHideFlags: 0
