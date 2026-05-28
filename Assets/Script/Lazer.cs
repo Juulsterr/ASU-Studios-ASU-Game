@@ -9,7 +9,7 @@ public class Lazer : MonoBehaviour
     void Start()
     {
         rb.linearVelocity = transform.right * speed;
-       Destroy(gameObject, 1f);
+       Destroy(gameObject, 0.5f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
