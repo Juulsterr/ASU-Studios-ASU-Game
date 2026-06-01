@@ -29,7 +29,6 @@ public class Bar : MonoBehaviour
 
         // Start met volle HP
         Value = MaxValue;
-        // gaytje
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
