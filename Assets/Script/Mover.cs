@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     void FollowPlayer()
     {
-        Vector2 newPos = Vector2.MoveTowards(
+        Vector3 newPos = Vector3.MoveTowards(
             rb.position,
             target.position,
             speed * Time.fixedDeltaTime
