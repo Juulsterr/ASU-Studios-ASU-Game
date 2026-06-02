@@ -33,7 +33,7 @@ public class Bar : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("LightLazer"))
         {
             TakeDamage(25);
             Debug.Log("Enemy geraakt");

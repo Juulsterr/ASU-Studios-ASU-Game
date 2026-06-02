@@ -463,7 +463,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889804120}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -571,8 +571,8 @@ MonoBehaviour:
   staminaRegen: 20
   staminaImage: {fileID: 1370958313}
   speedStaminaCost: 25
-  <MaxStamina>k__BackingField: 0
-  stamina: 0
+  <MaxStamina>k__BackingField: 100
+  stamina: 100
 --- !u!114 &889804128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,11 +857,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: b07f8c047d90b4a168f7a3ea9691d863, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1376,12 +1376,33 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1813578388}
+    - target: {fileID: 6108870302307546985, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108870302307546985, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.108
+      objectReference: {fileID: 0}
     - target: {fileID: 6846413841630260852, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 889804122}
+    - target: {fileID: 7467252162519839643, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467252162519839643, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467252162519839643, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.108
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5027038299342578510, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f21667cdceba46c89b07366c1babdc8, type: 3}

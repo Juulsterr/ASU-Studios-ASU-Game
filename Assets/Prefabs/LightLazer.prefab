@@ -151,7 +151,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -169,6 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb83323d9406447308a0631faad7c64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lazer
-  obj: {fileID: 5960785833786693271}
   speed: 20
+  damage: 34
   rb: {fileID: 8071814221079625473}
