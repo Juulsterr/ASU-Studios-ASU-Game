@@ -32,7 +32,7 @@ public class ShootLazers : MonoBehaviour
     {
         canShoot = false;
  
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
  
         canShoot = true;
     }

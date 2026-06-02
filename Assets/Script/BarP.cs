@@ -110,4 +110,9 @@ public class BarP : MonoBehaviour
 
         slowChangeBar.SetWidth(TargetWidth);
     }
+
+    void LateUpdate()
+{
+    transform.rotation = Quaternion.identity;
+}
 }

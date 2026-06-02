@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float sprintSpeed = 5f;
     private int distance;
     public GameObject lazer;
+    public float rotatationSpeed = 45f;
+
 
 
 
@@ -54,22 +56,25 @@ public class PlayerMovement : MonoBehaviour
         bool right = Input.GetKey(KeyCode.D);
 
         Vector3 move = Vector3.zero;
-
-        if (up && !down && !left && !right)
-        {
-            move = Vector3.up;
-        }
-        else if (down && !up && !left && !right)
-        {
-            move = Vector3.down;
-        }
-        else if (left && !up && !down && !right)
-        {
-            move = Vector3.left;
-        }
-        else if (right && !up && !down && !left)
+        if (right)
         {
             move = Vector3.right;
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        else if (left)
+        {
+            move = Vector3.left;
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else if (up)
+        {
+            move = Vector3.up;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (down)
+        {
+            move = Vector3.down;
+            transform.rotation = Quaternion.Euler(0, 0, 180);
         }
 
         transform.position += move * Time.deltaTime * moveSpeed;
