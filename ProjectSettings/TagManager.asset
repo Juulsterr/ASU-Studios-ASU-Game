@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - LightLazer
+  - Enemy1
+  - Enemy
+  - Shield
   layers:
   - Default
   - TransparentFX

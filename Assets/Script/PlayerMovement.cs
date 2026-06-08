@@ -10,7 +10,13 @@ public class PlayerMovement : MonoBehaviour
     private int distance;
     public GameObject lazer;
 
-
+    [Header("Shield")]
+    private bool shielded;
+    [SerializeField] private GameObject shield;
+    public int health = 100;
+    [Range(0, 100)] [SerializeField] private float shieldTimer;
+    public float noShieldTime = 30f;
+    public float shieldTime = 30f;
 
     [Header("Stamina")]
     [HideInInspector] public bool hasRegenerated = true;
@@ -41,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        shielded = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -48,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        CheckShield();
         bool up = Input.GetKey(KeyCode.W);
         bool down = Input.GetKey(KeyCode.S);
         bool left = Input.GetKey(KeyCode.A);
@@ -112,5 +121,47 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 2.5f;
         }
 
+
+        // if (shieldTimer == 0)
+        // {
+        //     shieldTimer += shieldTime * Time.deltaTime;
+        // }
     } 
+
+    void CheckShield()
+    {
+        if (Input.GetMouseButton(1) &&! shielded)
+        {
+            shield.SetActive(true);
+            shielded = true;
+
+            Invoke("NoShield", 3f);
+        }
+    }
+
+    public void NoShield()
+    {
+        // shieldTimer = 0;
+        shield.SetActive(false);
+        shielded = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy1")
+        {
+
+            if (!shielded)
+            {
+                health -= 25;
+                Debug.Log(health);
+                
+            }
+            // if (health <= 0)
+            // {
+            //     Die();
+            // }
+        }
+
+}
 }
