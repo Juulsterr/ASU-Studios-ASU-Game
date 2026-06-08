@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private bool shielded;
     [SerializeField] private GameObject shield;
     public int health = 100;
-    [Range(0, 100)] [SerializeField] private float shieldTimer;
-    public float noShieldTime = 30f;
-    public float shieldTime = 30f;
+    // [Range(0, 100)] [SerializeField] private float shieldTimer;
+    // public float noShieldTime = 30f;
+    // public float shieldTime = 30f;
 
     [Header("Stamina")]
     [HideInInspector] public bool hasRegenerated = true;
