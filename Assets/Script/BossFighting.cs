@@ -39,7 +39,7 @@ public class BossFighting : MonoBehaviour
     {
         canSlash = false;
  
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
  
         canSlash = true;
     }

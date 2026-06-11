@@ -3,7 +3,7 @@ using UnityEngine;
 public class SwordSlash : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float speed = 20f;
+    public float speed = 5f;
     public int damage = 34;
 
     public Rigidbody2D rb;
