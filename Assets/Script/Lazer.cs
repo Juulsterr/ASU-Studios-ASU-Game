@@ -12,10 +12,13 @@ public class Lazer : MonoBehaviour
        Destroy(gameObject, 0.5f);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Hit!");
+            Destroy(gameObject);
+        }
     }
     
 

@@ -7,7 +7,7 @@ public class EnemyFollow : MonoBehaviour
         //Then I set up the speed of the enemy, that I can edit later
 	public float speed = 2f;
         //Lastly, I added the enemy a rigidbody
-	public Rigidbody rb;
+	public Rigidbody2D rb;
   
 //First thing, I will create a function that follows the player
 void FollowPlayer(){

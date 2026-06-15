@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private Bar _bar;
+    public int health = 100;
 
     private void Start()
     {
@@ -10,16 +11,27 @@ public class EnemyHealth : MonoBehaviour
         _bar = GetComponentInChildren<Bar>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if(health <= 0)
         {
-            _bar.TakeDamage(25);
+            EnemyDie();
+        }
+    }
 
-            if (_bar.Value <= 0)
-            {
-                EnemyDie();
-            }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "LightLazer")
+        {
+            health -= 34;
+            Debug.Log(health);
+
+            // _bar.TakeDamage(25);
+
+            // if (_bar.Value <= 0)
+            // {
+            //     EnemyDie();
+            // }
         }
     }
 
