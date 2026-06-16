@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5653413651196680992}
   - component: {fileID: 3096499725832203326}
-  - component: {fileID: 8071814221079625473}
-  - component: {fileID: 5986605210233622568}
-  - component: {fileID: 5885330268162358439}
+  - component: {fileID: 6877420784976429703}
+  - component: {fileID: 5074450066891117432}
+  - component: {fileID: 572355901843274870}
   m_Layer: 0
   m_Name: LightLazer
   m_TagString: LightLazer
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5960785833786693271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.40649, y: -3.896, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -7.03519, y: -4.653887, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,17 +84,32 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: bc8b499f00ba54e06a4e7d2f220ddaae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a44322fb070e46beaab0b74274f46df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 33.75, y: 60}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!50 &8071814221079625473
+--- !u!114 &6877420784976429703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5960785833786693271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb83323d9406447308a0631faad7c64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lazer
+  speed: 20
+  damage: 34
+  rb: {fileID: 5074450066891117432}
+--- !u!50 &5074450066891117432
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -119,9 +134,9 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!58 &5986605210233622568
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &572355901843274870
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,20 +170,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.9140041}
-  m_Radius: 1.1476715
---- !u!114 &5885330268162358439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5960785833786693271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb83323d9406447308a0631faad7c64c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lazer
-  speed: 20
-  damage: 34
-  rb: {fileID: 8071814221079625473}
+  m_Offset: {x: 0.9881701, y: 0}
+  m_Radius: 1.2711416

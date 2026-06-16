@@ -26,12 +26,12 @@ public class EnemyHealth : MonoBehaviour
             health -= 34;
             Debug.Log(health);
 
-            // _bar.TakeDamage(25);
+            _bar.TakeDamage(25);
 
-            // if (_bar.Value <= 0)
-            // {
-            //     EnemyDie();
-            // }
+            if (_bar.Value <= 0)
+            {
+                EnemyDie();
+            }
         }
     }
 

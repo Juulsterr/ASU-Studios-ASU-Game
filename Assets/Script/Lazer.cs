@@ -8,13 +8,13 @@ public class Lazer : MonoBehaviour
     public Rigidbody2D rb;
     void Start()
     {
-        rb.linearVelocity = transform.up * speed;
+        rb.linearVelocity = transform.right * speed;
        Destroy(gameObject, 0.5f);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy1")
         {
             Debug.Log("Hit!");
             Destroy(gameObject);
