@@ -61,15 +61,15 @@ public class BarP : MonoBehaviour
 
     private void Update()
 {
-    if (Input.GetMouseButtonDown(0))
-    {
-        TakeDamage(25);
-    }
+    // if (Input.GetMouseButtonDown(0))
+    // {
+    //     TakeDamage(25);
+    // }
 
-    if (Input.GetMouseButtonDown(1))
-    {
-        Heal(25);
-    }
+    // if (Input.GetMouseButtonDown(1))
+    // {
+    //     Heal(25);
+    // }
 }
     public void Change(int amount)
     {

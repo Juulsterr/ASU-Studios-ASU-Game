@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public EnemySpawner spawner;
     private Bar _bar;
 
     private void Start()
@@ -23,8 +24,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void EnemyDie()
+   private void EnemyDie()
+{
+    if (spawner != null)
     {
-        Destroy(gameObject);
+        // spawner.EnemyKilled(); //moet nog worden toegevoegd in EnemySpawner.cs
     }
+
+    Destroy(gameObject);
+}
 }
