@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             stamina += staminaRegen * Time.deltaTime;
         }
 
-        staminaImage.fillAmount = stamina / 100f;
+        // staminaImage.fillAmount = stamina / 100f;
 
         if (stamina == 0)
         {

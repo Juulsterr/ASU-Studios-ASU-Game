@@ -8,6 +8,8 @@ TagManager:
   - Enemy1
   - Enemy
   - Shield
+  - Enemy1
+  - EnemySpawners
   layers:
   - Default
   - TransparentFX
