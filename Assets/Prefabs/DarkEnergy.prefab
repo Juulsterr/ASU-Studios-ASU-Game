@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7988831153155914377}
   - component: {fileID: 4964751183550985319}
+  - component: {fileID: 2891667087231387718}
+  - component: {fileID: 6789892855425401568}
   m_Layer: 0
   m_Name: DarkEnergy
   m_TagString: Untagged
@@ -91,3 +93,45 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!50 &2891667087231387718
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628948225828043826}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6789892855425401568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628948225828043826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af813a9d77fee4b4aa0014e50817a003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DarkEnergy
+  speed: 20
+  damage: 15
+  rb: {fileID: 2891667087231387718}

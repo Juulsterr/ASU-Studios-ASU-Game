@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
         // Player Rigidbody2D zoeken
         target = GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<Rigidbody2D>();
+        .GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
