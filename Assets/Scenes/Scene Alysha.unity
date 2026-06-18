@@ -294,6 +294,11 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8361183552317332302, guid: 9e3159f0b52a04ace8a61f7b5c5861ce, type: 3}
   m_PrefabInstance: {fileID: 1951259028}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &618690886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2987881221376831984, guid: 9e3159f0b52a04ace8a61f7b5c5861ce, type: 3}
+  m_PrefabInstance: {fileID: 1951259028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025879447
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57af09366c7b040f3b5f7691b04601c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttackAim
-  target: {fileID: 0}
+  target: {fileID: 618690886}
   speed: 200
 --- !u!1001 &1951259028
 PrefabInstance:
