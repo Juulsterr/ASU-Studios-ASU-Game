@@ -13,10 +13,20 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        // Automatisch speler zoeken als deze niet is ingevuld
         if (player == null)
         {
-            Debug.LogError("Player niet toegewezen!");
-            return;
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+            }
+            else
+            {
+                Debug.LogError("Geen Player gevonden! Geef de Player-tag aan je speler of sleep hem in het Player veld.");
+                return;
+            }
         }
 
         StartCoroutine(StartWaves());
@@ -56,27 +66,32 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(Wave wave)
     {
-        if (wave.enemyPrefabs.Length == 0)
+        if (wave.enemyPrefabs == null || wave.enemyPrefabs.Length == 0)
+        {
+            Debug.LogWarning("Geen enemies toegevoegd aan deze wave.");
             return;
+        }
 
-        // Kies random enemy
+        // Kies willekeurige enemy uit de lijst
         GameObject enemyPrefab =
             wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Length)];
 
-        // Random richting rondom speler
-        Vector2 direction = Random.insideUnitCircle.normalized;
+        // Willekeurige hoek in een cirkel
+        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
 
-        // Random afstand
-        float distance =
-            Random.Range(wave.minSpawnDistance, wave.maxSpawnDistance);
+        // Willekeurige afstand van de speler
+        float distance = Random.Range(
+            wave.minSpawnDistance,
+            wave.maxSpawnDistance
+        );
 
-        // Spawn positie
+        // Bereken spawnpositie rondom speler (2D)
         Vector3 spawnPosition =
             player.position +
             new Vector3(
-                direction.x * distance,
-                0f,
-                direction.y * distance
+                Mathf.Cos(angle) * distance,
+                Mathf.Sin(angle) * distance,
+                0f
             );
 
         Instantiate(
@@ -93,17 +108,18 @@ public class Wave
     [Header("Enemies die mogen spawnen")]
     public GameObject[] enemyPrefabs;
 
-    [Header("Aantal enemies in deze wave")]
+    [Header("Aantal enemies")]
     public int enemyCount = 10;
 
-    [Header("Wachttijd voor deze wave start")]
+    [Header("Wachttijd voor wave start")]
     public float startDelay = 10f;
 
-    [Header("Tijd tussen spawns")]
+    [Header("Tijd tussen enemies")]
     public float timeBetweenSpawns = 0.5f;
 
-    [Header("Spawn afstand vanaf speler")]
+    [Header("Minimale spawn afstand")]
     public float minSpawnDistance = 5f;
 
+    [Header("Maximale spawn afstand")]
     public float maxSpawnDistance = 10f;
 }
