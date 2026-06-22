@@ -36,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-   private void EnemyDie()
+   public void EnemyDie()
 {
     if (spawner != null)
     {

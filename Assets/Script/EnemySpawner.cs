@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
@@ -9,7 +10,11 @@ public class EnemySpawner : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private Wave[] waves;
 
+    [Header("Next Level")]
+    [SerializeField] private string nextLevelSceneName;
+
     private int currentWaveIndex = 0;
+    private bool allWavesSpawned = false;
 
     private void Start()
     {
@@ -29,6 +34,9 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
+        // Controleer elke seconde hoeveel enemies er nog leven
+        InvokeRepeating(nameof(CheckEnemiesAlive), 1f, 1f);
+
         StartCoroutine(StartWaves());
     }
 
@@ -47,7 +55,9 @@ public class EnemySpawner : MonoBehaviour
             currentWaveIndex++;
         }
 
-        Debug.Log("Alle waves voltooid!");
+        allWavesSpawned = true;
+
+        Debug.Log("Alle waves zijn gespawned!");
     }
 
     private IEnumerator SpawnWave(Wave wave)
@@ -61,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(wave.timeBetweenSpawns);
         }
 
-        Debug.Log($"Wave {currentWaveIndex + 1} voltooid!");
+        Debug.Log($"Wave {currentWaveIndex + 1} volledig gespawned!");
     }
 
     private void SpawnEnemy(Wave wave)
@@ -85,7 +95,7 @@ public class EnemySpawner : MonoBehaviour
             wave.maxSpawnDistance
         );
 
-        // Bereken spawnpositie rondom speler (2D)
+        // Bereken spawnpositie rondom speler
         Vector3 spawnPosition =
             player.position +
             new Vector3(
@@ -99,6 +109,24 @@ public class EnemySpawner : MonoBehaviour
             spawnPosition,
             Quaternion.identity
         );
+    }
+
+    private void CheckEnemiesAlive()
+    {
+        // Alleen controleren als alle waves zijn gespawned
+        if (!allWavesSpawned)
+            return;
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemies.Length == 0)
+        {
+            Debug.Log("Alle enemies verslagen! Volgende level laden...");
+
+            CancelInvoke(nameof(CheckEnemiesAlive));
+
+            SceneManager.LoadScene(nextLevelSceneName);
+        }
     }
 }
 
