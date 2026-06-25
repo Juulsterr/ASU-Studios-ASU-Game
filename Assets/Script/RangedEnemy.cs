@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
+    public int health = 100;
     public Rigidbody2D target;
     public float speed = 2.4f;
     private bool canShoot = true;
@@ -35,8 +36,8 @@ public class RangedEnemy : MonoBehaviour
     {
         if (canShoot && Vector2.Distance(target.position, transform.position) <= distanceToStop)
         {
-            StartCoroutine(ShootCooldown());
             Shoot();
+            StartCoroutine(ShootCooldown());
         }
     }
      void FollowPlayer()

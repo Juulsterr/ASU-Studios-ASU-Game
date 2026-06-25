@@ -117,7 +117,7 @@ public class EnemySpawner : MonoBehaviour
         if (!allWavesSpawned)
             return;
 
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy1");
 
         if (enemies.Length == 0)
         {

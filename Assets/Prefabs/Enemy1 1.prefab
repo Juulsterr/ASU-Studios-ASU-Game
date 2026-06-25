@@ -421,7 +421,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.89, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9076888258930660817}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Topdown.Movement.PlayerMovement
   speed: 2
-  target: {fileID: 0}
+  target: {fileID: 8361183552317332302, guid: 9e3159f0b52a04ace8a61f7b5c5861ce, type: 3}
 --- !u!58 &1060297608987332402
 CircleCollider2D:
   m_ObjectHideFlags: 0
