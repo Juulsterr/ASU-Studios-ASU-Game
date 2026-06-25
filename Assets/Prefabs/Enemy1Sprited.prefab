@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 1060297608987332402}
   - component: {fileID: 2801833693016831911}
   - component: {fileID: 8715994212954936974}
+  - component: {fileID: -818890911882320088}
   m_Layer: 0
   m_Name: Enemy1Sprited
   m_TagString: Enemy1
@@ -579,6 +580,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &-818890911882320088
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776391085299480250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9012294965218c5438253b91706428ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5886766149690682917
 GameObject:
   m_ObjectHideFlags: 0
