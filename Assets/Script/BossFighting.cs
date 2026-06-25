@@ -5,9 +5,11 @@ public class BossFighting : MonoBehaviour
     private bool canSlash = true;
     public Transform firePoint;
     public GameObject swordSlash;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         StartCoroutine(StartShootCooldown());
     }
 
@@ -16,6 +18,7 @@ public class BossFighting : MonoBehaviour
     {
         if (canSlash)
         {
+            Debug.Log("SLASH");
             StartCoroutine(ShootCooldown());
             Shoot();
         }
@@ -24,8 +27,9 @@ public class BossFighting : MonoBehaviour
      void Shoot()
     {
       Instantiate(swordSlash, firePoint.position, firePoint.rotation); 
+            animator.Play("Boss slash");
     }
-
+   
     private System.Collections.IEnumerator ShootCooldown()
     {
         canSlash = false;
@@ -43,4 +47,5 @@ public class BossFighting : MonoBehaviour
  
         canSlash = true;
     }
+
 }
