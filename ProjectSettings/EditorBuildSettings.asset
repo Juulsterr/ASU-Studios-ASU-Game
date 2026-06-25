@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UI Scene.unity
+    guid: 9aa4719f50381c9449b054a6a1994f0c
+  - enabled: 1
     path: Assets/Scenes/Scene Alysha.unity
     guid: 4d993271dad814466a37126157f14c81
   - enabled: 1
