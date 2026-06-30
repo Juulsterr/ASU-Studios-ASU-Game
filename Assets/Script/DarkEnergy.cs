@@ -8,7 +8,7 @@ public class DarkEnergy : MonoBehaviour
     public Rigidbody2D rb;
     void Start()
     {
-        rb.linearVelocity = transform.right * speed;
+        rb.linearVelocity = transform.up * speed;
        Destroy(gameObject, 0.5f);
     }
 

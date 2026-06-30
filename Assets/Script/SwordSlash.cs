@@ -10,13 +10,16 @@ public class SwordSlash : MonoBehaviour
     void Start()
     {
         rb.linearVelocity = transform.right * speed;
-       Destroy(gameObject, 3f);
+       Destroy(gameObject, 6f);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            
+        }
     }
     
 

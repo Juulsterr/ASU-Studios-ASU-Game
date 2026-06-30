@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             stamina += staminaRegen * Time.deltaTime;
         }
 
-        // staminaImage.fillAmount = stamina / 100f;
+        staminaImage.fillAmount = stamina / 100f;
 
         if (stamina == 0)
         {
@@ -146,11 +146,39 @@ public class PlayerMovement : MonoBehaviour
         shielded = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy1")
         {
 
+            if (!shielded)
+            {
+                health -= 10;
+                Debug.Log(health);
+                
+            }
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+
+        if (collision.gameObject.tag == "DarkEnergy")
+        {
+            if (!shielded)
+            {
+                health -= 10;
+                Debug.Log(health);
+                
+            }
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+
+        if (collision.gameObject.tag == "SwordSlash")
+        {
             if (!shielded)
             {
                 health -= 25;

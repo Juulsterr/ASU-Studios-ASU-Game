@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BossFighting : MonoBehaviour
 {
+    public int health = 600;
     private bool canSlash = true;
     public Transform firePoint;
     public GameObject swordSlash;
@@ -29,6 +30,20 @@ public class BossFighting : MonoBehaviour
       Instantiate(swordSlash, firePoint.position, firePoint.rotation); 
             animator.Play("Boss slash");
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "LightLazer")
+        {
+            health -= 20;
+            Debug.Log(health);
+        }
+        
+        if (health <= 0)
+        {
+            EnemyDie();
+        }
+    }
    
     private System.Collections.IEnumerator ShootCooldown()
     {
@@ -46,6 +61,10 @@ public class BossFighting : MonoBehaviour
         yield return new WaitForSeconds(1f);
  
         canSlash = true;
+    }
+    public void EnemyDie()
+    {
+        Destroy(gameObject);
     }
 
 }
