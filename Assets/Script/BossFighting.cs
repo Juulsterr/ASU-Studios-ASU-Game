@@ -38,11 +38,7 @@ public class BossFighting : MonoBehaviour
             health -= 20;
             Debug.Log(health);
         }
-        
-        if (health <= 0)
-        {
-            EnemyDie();
-        }
+
     }
    
     private System.Collections.IEnumerator ShootCooldown()
@@ -58,13 +54,9 @@ public class BossFighting : MonoBehaviour
     {
         canSlash = false;
  
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
  
         canSlash = true;
-    }
-    public void EnemyDie()
-    {
-        Destroy(gameObject);
     }
 
 }

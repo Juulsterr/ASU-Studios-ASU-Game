@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RangedAttackAim : MonoBehaviour
 {
-      public Transform target;
+  public Transform target;
     public float speed = 200f;
 
     void Update()

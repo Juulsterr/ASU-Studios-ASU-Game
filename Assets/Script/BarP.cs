@@ -31,11 +31,16 @@ public class BarP : MonoBehaviour
         Value = MaxValue;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("Enemy3"))
+        if (collision.gameObject.CompareTag("Enemy1") || collision.gameObject.CompareTag("DarkEnergy") || collision.gameObject.CompareTag("Enemy3"))
         {
             TakeDamage(10);
+            Debug.Log("Speler geraakt");
+        }
+        if (collision.gameObject.CompareTag("SwordSlash"))
+        {
+            TakeDamage(25);
             Debug.Log("Speler geraakt");
         }
     }

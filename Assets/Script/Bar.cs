@@ -46,7 +46,7 @@ public class Bar : MonoBehaviour
 
         if (Value <= 0)
         {
-            EnemyDie();
+            // EnemyDie();
         }
     }
 
@@ -55,10 +55,10 @@ public class Bar : MonoBehaviour
         Change(amount);
     }
 
-    private void EnemyDie()
-    {
-        Destroy(gameObject);
-    }
+    // private void EnemyDie()
+    // {
+    //     Destroy(gameObject);
+    // }
 
     public void Change(int amount)
     {
